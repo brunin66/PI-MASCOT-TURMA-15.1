@@ -1,0 +1,2 @@
+class FuncionarioExistenteException(Exception):
+    pass

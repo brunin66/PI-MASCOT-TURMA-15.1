@@ -1,0 +1,2 @@
+class FuncionarioEmailExistenteException(Exception):
+    pass

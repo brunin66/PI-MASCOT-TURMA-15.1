@@ -1,0 +1,2 @@
+class ConsultaExistenteException(Exception):
+    pass

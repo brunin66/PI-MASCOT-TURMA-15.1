@@ -1,0 +1,2 @@
+class ClienteEmailExistenteException(Exception):
+    pass
