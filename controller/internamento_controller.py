@@ -9,7 +9,7 @@ internamento_bp = Blueprint('internamento', __name__)
 @internamento_bp.route('/<int:id>', methods=['GET'])
 @jwt_required()  # Exige autenticação via JWT
 def get_internamento(id):
-    """Buscar um internamento pelo ID"""
+    #Buscar um internamento pelo ID
     try:
         internamento = InternamentoService.buscar_por_id(id)
         return jsonify(internamento.to_dict()), 200
@@ -24,7 +24,7 @@ def get_internamento(id):
 @internamento_bp.route('', methods=['GET'])
 @jwt_required()  # Exige autenticação via JWT
 def get_internamentos():
-    """Buscar todos os internamentos com paginação"""
+    #Buscar todos os internamentos com paginação
     try:
         page = request.args.get('page', 1, type=int)
         per_page = request.args.get('per_page', 10, type=int)
@@ -38,7 +38,7 @@ def get_internamentos():
 @internamento_bp.route('', methods=['POST'])
 @jwt_required()  # Exige autenticação via JWT
 def cadastrar_internamento():
-    """Cadastrar um novo internamento"""
+    #Cadastrar um novo internamento
     data = request.get_json()
 
     # Verificação básica para os dados obrigatórios
@@ -69,7 +69,7 @@ def cadastrar_internamento():
 @internamento_bp.route('/<int:id>', methods=['PUT'])
 @jwt_required()  # Exige autenticação via JWT
 def atualizar_internamento(id):
-    """Atualizar um internamento existente"""
+    #Atualizar um internamento existente
     data = request.get_json()
 
     # Verificação básica para os dados obrigatórios
@@ -101,7 +101,7 @@ def atualizar_internamento(id):
 @internamento_bp.route('/<int:id>', methods=['DELETE'])
 @jwt_required()  # Exige autenticação via JWT
 def deletar_internamento(id):
-    """Excluir um internamento pelo ID"""
+    #Excluir um internamento pelo ID
     try:
         if InternamentoService.deletar_internamento(id):
             return jsonify({"Message": "Internamento excluído com sucesso."}), 204

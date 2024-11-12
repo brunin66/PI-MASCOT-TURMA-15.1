@@ -32,6 +32,7 @@ app.register_blueprint(material_bp, url_prefix='/api/material')
 app.register_blueprint(animal_bp, url_prefix='/api/animal')
 app.register_blueprint(servico_bp, url_prefix='/api/servico')
 app.register_blueprint(consulta_bp, url_prefix='/api/consulta')
+app.register_blueprint(internamento_bp, url_prefix='/api/internamento')
 
 
 
